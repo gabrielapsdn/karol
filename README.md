@@ -8,7 +8,7 @@ Abra o arquivo `index.html` em um navegador. Não é necessário instalar depend
 
 ## Personalizar
 
-- **Foto:** clique em “escolher a foto que mandei” uma vez. Ela fica salva neste navegador e o botão desaparece depois; a imagem não é enviada para um servidor.
+- **Foto:** a imagem fixa está incluída no projeto e aparece na moldura em qualquer navegador.
 - **Contador:** conta os dias desde 30 de abril de 2026 automaticamente.
 - **Spotify:** a playlist enviada já está incorporada; também é possível colar outro link e apertar a seta. O player pode pedir login e depende de conexão com a internet.
 - **Nosso elo:** a página `elo.html` cruza a segunda letra A de Gabriela e Karol, unidas por um coração.

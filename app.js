@@ -20,44 +20,11 @@ updateDaysTogether();
 
 const heroPhoto = $('#heroPhoto');
 const photoFrame = $('.photo-frame');
-const savedPhoto = localStorage.getItem('ourCouplePhoto');
-if (savedPhoto) heroPhoto.src = savedPhoto;
 heroPhoto.addEventListener('load', () => photoFrame.classList.add('has-photo'));
 heroPhoto.addEventListener('error', () => {
   photoFrame.classList.remove('has-photo');
-  localStorage.removeItem('ourCouplePhoto');
 });
-
-$('#photoUpload').addEventListener('change', (event) => {
-  const file = event.target.files?.[0];
-  if (!file) return;
-  if (!file.type.startsWith('image/')) {
-    showToast('Escolha uma imagem para a foto de vocês ♡');
-    return;
-  }
-
-  const reader = new FileReader();
-  reader.addEventListener('load', () => {
-    const image = new Image();
-    image.addEventListener('load', () => {
-      const scale = Math.min(1, 1200 / Math.max(image.naturalWidth, image.naturalHeight));
-      const canvas = document.createElement('canvas');
-      canvas.width = Math.round(image.naturalWidth * scale);
-      canvas.height = Math.round(image.naturalHeight * scale);
-      canvas.getContext('2d').drawImage(image, 0, 0, canvas.width, canvas.height);
-      const photoData = canvas.toDataURL('image/jpeg', 0.82);
-      try {
-        localStorage.setItem('ourCouplePhoto', photoData);
-        heroPhoto.src = photoData;
-        showToast('Foto salva aqui e botão bloqueado ♡');
-      } catch {
-        showToast('A foto é muito grande. Tente uma imagem menor.');
-      }
-    });
-    image.src = reader.result;
-  });
-  reader.readAsDataURL(file);
-});
+if (heroPhoto.complete && heroPhoto.naturalWidth) photoFrame.classList.add('has-photo');
 
 function spotifyEmbedUrl(rawUrl) {
   try {
