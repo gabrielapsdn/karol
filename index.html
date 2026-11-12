@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#fff8fb" />
+    <meta name="description" content="Um cantinho fofo para celebrar a história da Gabriela e da Karol e ouvir música juntinhas." />
+    <title>Gabriela &amp; Karol ♡</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="photo-setup.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#inicio" aria-label="Gabriela e Karol, início"><span class="brand-heart">♥</span> Gabriela &amp; Karol</a>
+      <nav aria-label="Navegação principal">
+        <a href="#historia">Nossa história</a>
+        <a href="elo.html">Nosso elo</a>
+        <a href="#musica">Nossa trilha</a>
+      </nav>
+      <button class="sound-toggle" id="heartButton" type="button" aria-label="Enviar um coração">♡ <span>mandar amor</span></button>
+    </header>
+
+    <main>
+      <section class="hero" id="inicio">
+        <div class="hero-copy">
+          <span class="eyebrow">te amo</span>
+          <h1>Gabriela &amp; Karol</h1>
+        </div>
+        <div class="hero-art" aria-label="Moldura de foto do casal">
+          <div class="sun-shape"></div>
+          <div class="photo-frame">
+            <img id="heroPhoto" alt="Gabriela e Karol juntas" />
+            <div class="photo-placeholder" id="photoPlaceholder"><span>♡</span><strong>Gabriela &amp; Karol</strong><small>uma foto de vocês duas</small><label class="photo-setup" for="photoUpload">escolher a foto que mandei</label><input id="photoUpload" type="file" accept="image/*" hidden /></div>
+          </div>
+          <span class="float-doodle doodle-one">✿</span><span class="float-doodle doodle-two">♡</span>
+          <div class="photo-caption">meu lugar favorito é ao seu lado <span>♡</span></div>
+        </div>
+      </section>
+
+      <section class="story section-wrap" id="historia">
+        <div class="section-heading">
+          <span class="eyebrow">capítulo favorito</span>
+          <h2>A nossa história</h2>
+          <p>As melhores coisas são as que viram “lembra daquele dia?”.</p>
+        </div>
+        <div class="story-card">
+          <div class="story-date"><span>NOS CONHECEMOS HÁ</span><strong id="daysTogether">∞</strong><span>DIAS</span></div>
+          <div class="story-divider"></div>
+          <div class="story-edit">
+            <span class="mini-label">E CADA DIA QUE PASSA</span>
+            <h3>TE AMO MAIS.</h3>
+          </div>
+          <span class="story-scribble">com amor,<br />sempre ♡</span>
+        </div>
+      </section>
+
+      <section class="music-section section-wrap" id="musica">
+        <div class="music-copy"><span class="eyebrow">aperte o play</span><h2>A trilha sonora<br /><em>da gente.</em></h2><p>Minhas músicas pra você ♡</p>
+          <label class="playlist-label" for="playlistUrl">Link da playlist do Spotify</label>
+          <div class="playlist-input"><input id="playlistUrl" type="url" value="https://open.spotify.com/playlist/4I4ZeW2VxNBsDpxUD0jpdp" placeholder="https://open.spotify.com/playlist/..." /><button id="loadPlaylist" type="button" aria-label="Carregar playlist">→</button></div>
+          <small class="music-note">Cole o link da playlist para ouvir por aqui. O Spotify pode pedir login.</small>
+        </div>
+        <div class="spotify-card" id="spotifyCard">
+          <div class="vinyl"><div class="vinyl-center">♡</div></div>
+          <div class="spotify-empty"><span>♫</span><strong>uma música para nós</strong><small>a playlist de vocês aparece aqui</small></div>
+          <div class="spotify-embed" id="spotifyEmbed"></div>
+        </div>
+      </section>
+
+      <section class="little-note"><span>♡</span><p>Para a pessoa que faz qualquer dia comum<br />virar uma lembrança bonita.</p><span>♡</span></section>
+    </main>
+
+    <footer><span>feito com <b>♥</b> e um pouquinho de saudade</span><span>nosso cantinho · sempre nós</span></footer>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>
